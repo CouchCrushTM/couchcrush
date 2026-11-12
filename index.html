@@ -1,0 +1,928 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>[hidden]{display:none!important}</style>
+<title>Couch Crush</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Couch Crush is a solid walnut couch tray with a heated pad, two cup holders and legs that adjust from 9 to 14 inches.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout concept: dark walnut-and-amber product page. Sticky nav with scroll progress, hero with a live 3D tray, marquee, feature cards, illustrated lifestyle panel, word-by-word statement, specs table, FAQ, waitlist card. */
+:root{
+  --bg:#120e0c;
+  --surface:#1d1612;
+  --surface-2:#2a1f18;
+  --line:rgba(242,233,221,.11);
+  --line-2:rgba(242,233,221,.22);
+  --fg:#f2e9dd;
+  --muted:#a69888;
+  --dim:#766859;
+  --copper:#dba46b;
+  --copper-2:#b9783f;
+  --amber:#ff7a2f;
+  --cream:#f2e8dc;
+  --ink:#1a1310;
+  --font-display:'Instrument Serif','Iowan Old Style',Georgia,serif;
+  --font-body:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  --gutter:clamp(16px,4vw,48px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.wrap{width:100%;max-width:1360px;margin-inline:auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.section{padding-block:clamp(64px,9vw,128px)}
+section[id]{scroll-margin-top:96px}
+em{font-style:italic;color:var(--copper)}
+h1,h2,h3,p{margin:0}
+h1,h2{font-family:var(--font-display);font-weight:400;letter-spacing:-.012em;text-wrap:balance}
+h2{font-size:clamp(40px,5.2vw,72px);line-height:1}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--copper);margin-bottom:22px}
+.body{color:var(--muted);font-size:clamp(16px,1.4vw,18px);max-width:34em}
+
+/* progress + header */
+#progress{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;background:linear-gradient(90deg,var(--copper-2),var(--amber));transform-origin:0 50%;transform:scaleX(0);z-index:50}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(18,14,12,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:80px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600;font-size:20px;letter-spacing:-.01em;text-decoration:none}
+.logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(145deg,#dc9f68,#a9622f);display:grid;place-items:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.menu{display:flex;gap:36px}
+.menu a{color:var(--muted);text-decoration:none;font-size:15px;transition:color .2s}
+.menu a:hover{color:var(--fg)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 28px;border-radius:999px;font:500 16px/1 var(--font-body);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s,background .25s,border-color .25s}
+.btn svg{transition:transform .25s}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--cream);color:var(--ink)}
+.btn-primary:hover{background:#fff7ec;transform:translateY(-1px)}
+.btn-ghost{background:rgba(242,233,221,.04);border-color:var(--line-2);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--copper);background:rgba(219,164,107,.08)}
+.btn-sm{height:44px;padding:0 22px;font-size:15px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(36px,6vw,84px)}
+.hero-copy{min-width:0}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;border:1px solid rgba(219,164,107,.35);background:rgba(219,164,107,.06);color:var(--copper);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(255,122,47,.6);animation:ping 2.4s infinite}
+.hero h1{font-size:clamp(52px,7vw,104px);line-height:.95;margin:22px 0 24px}
+.lede{color:var(--muted);font-size:clamp(17px,1.5vw,19px);max-width:31em}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(24px,4vw,56px);margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.num{display:block;font-family:var(--font-display);font-size:clamp(34px,3.6vw,48px);line-height:1}
+.lab{display:block;margin-top:8px;color:var(--muted);font-size:14px;max-width:7em;line-height:1.35}
+
+/* 3D viewer */
+.viewer{position:relative;min-height:clamp(440px,46vw,600px);border:1px solid var(--line);border-radius:32px;overflow:hidden;background:radial-gradient(80% 70% at 50% 32%,#32241a 0%,#17110e 72%)}
+.stage{position:absolute;inset:0}
+#gl{width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab;outline:none}
+#gl.grab{cursor:grabbing}
+#gl:focus-visible{outline:2px solid var(--copper);outline-offset:-8px;border-radius:32px}
+.hint{position:absolute;z-index:2;top:18px;left:18px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(18,14,12,.62);color:var(--muted);font-size:13px;pointer-events:none}
+.zoom{position:absolute;z-index:2;top:18px;right:18px;display:grid;gap:10px}
+.ico{width:46px;height:46px;border-radius:50%;border:1px solid var(--line-2);background:rgba(18,14,12,.62);color:var(--fg);display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+.ico:hover{background:var(--surface-2);border-color:var(--copper)}
+.controls{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;padding:12px 20px;border-radius:22px;border:1px solid var(--line);background:rgba(20,15,12,.74);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.switch{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;position:relative;cursor:pointer}
+.switch input{position:absolute;left:0;top:0;width:44px;height:26px;margin:0;opacity:0;cursor:pointer}
+.switch .track{flex:none;width:44px;height:26px;border-radius:99px;background:#3b3029;position:relative;transition:background .25s}
+.switch .track::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--cream);transition:transform .25s}
+.switch input:checked+.track{background:var(--amber)}
+.switch input:checked+.track::after{transform:translateX(18px)}
+.switch input:focus-visible+.track{outline:2px solid var(--copper);outline-offset:3px}
+.range{display:flex;align-items:center;gap:12px;flex:1 1 230px;min-width:0;font-size:14px;font-weight:500}
+.range input{flex:1;min-width:110px;-webkit-appearance:none;appearance:none;background:transparent;height:28px;margin:0}
+.range input::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--copper) var(--fill,50%),#3b3029 var(--fill,50%))}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;margin-top:-9px;border-radius:50%;background:var(--copper);border:3px solid #2a1f18;box-shadow:0 0 0 1px var(--copper-2)}
+.range input::-moz-range-track{height:4px;border-radius:4px;background:#3b3029}
+.range input::-moz-range-progress{height:4px;border-radius:4px;background:var(--copper)}
+.range input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--copper);border:3px solid #2a1f18}
+.mono{font-family:var(--font-mono);font-size:14px;color:var(--copper);min-width:4.2ch;text-align:right}
+.fallback{position:absolute;inset:0;display:grid;place-items:center;padding:32px;text-align:center;color:var(--muted)}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:rgba(255,255,255,.015);overflow:hidden;padding-block:22px}
+.marquee-track{display:flex;width:max-content;animation:slide 46s linear infinite}
+.marquee ul{display:flex;align-items:center;margin:0;padding:0;list-style:none;flex:none}
+.marquee li{display:flex;align-items:center;font-family:var(--font-display);font-size:clamp(24px,2.4vw,32px);color:#cdbfae;white-space:nowrap}
+.marquee li::after{content:"";width:9px;height:9px;margin-inline:clamp(24px,3vw,44px);background:var(--copper);transform:rotate(45deg);flex:none}
+
+/* features */
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 64px;align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.head .body{justify-self:end;max-width:25em}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{position:relative;display:flex;flex-direction:column;min-height:320px;padding:28px;border-radius:26px;border:1px solid var(--line);background:linear-gradient(180deg,#201813,#171210);transition:border-color .3s,transform .3s,background .3s}
+.card:hover{border-color:rgba(219,164,107,.42);transform:translateY(-4px);background:linear-gradient(180deg,#261c16,#1a1410)}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:auto;padding-bottom:44px}
+.card .badge{width:56px;height:56px;border-radius:17px;display:grid;place-items:center;color:var(--copper);background:rgba(219,164,107,.1);border:1px solid rgba(219,164,107,.28)}
+.card .idx{font-family:var(--font-mono);font-size:13px;color:var(--muted)}
+.card h3{font-size:21px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px}
+.card p{color:var(--muted);font-size:15.5px;line-height:1.6}
+
+/* lifestyle panel */
+.photo{position:relative;overflow:hidden;border-radius:36px;border:1px solid var(--line);background:#1a120d;aspect-ratio:1600/760}
+.photo svg{position:absolute;inset:0;width:100%;height:100%;max-width:none;transform:scale(1.1);will-change:transform}
+.tag{position:absolute;left:clamp(14px,2vw,28px);bottom:clamp(14px,2vw,28px);padding:10px 18px;border-radius:999px;border:1px solid var(--line-2);background:rgba(18,14,12,.66);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font-size:12px;font-weight:500;letter-spacing:.15em;text-transform:uppercase}
+.steam{fill:none;stroke:rgba(255,240,220,.45);stroke-width:5;stroke-linecap:round;transform-box:fill-box;animation:steam 4.2s ease-in-out infinite}
+.steam.s2{animation-delay:1.4s}
+.steam.s3{animation-delay:2.6s}
+
+/* statement */
+.statement{font-family:var(--font-display);font-size:clamp(28px,3.9vw,56px);line-height:1.2;letter-spacing:-.01em;max-width:1120px}
+.statement .w{color:var(--dim);transition:color .4s}
+.statement .w.lit{color:var(--fg)}
+
+/* specs */
+.specs-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.specs-copy .body{margin-top:26px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 0;padding:0;list-style:none}
+.chips li{padding:9px 16px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;font-weight:500;background:rgba(242,233,221,.03)}
+.spec-table{margin:0;border-bottom:1px solid var(--line)}
+.spec-row{display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.spec-row dt{color:var(--muted);font-size:16px}
+.spec-row dd{margin:0;text-align:right;font-weight:600;font-size:16px}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.faq-list{border-bottom:1px solid var(--line)}
+.faq-item{border-top:1px solid var(--line)}
+.q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:26px 0;background:none;border:0;color:var(--fg);font-family:var(--font-display);font-size:clamp(21px,2vw,26px);line-height:1.2;text-align:left;cursor:pointer}
+.q svg{flex:none;color:var(--copper);transition:transform .35s}
+.q[aria-expanded="true"] svg{transform:rotate(180deg)}
+.a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.a>div{overflow:hidden;visibility:hidden;transition:visibility 0s .4s}
+.faq-item.open .a{grid-template-rows:1fr}
+.faq-item.open .a>div{visibility:visible;transition-delay:0s}
+.a p{padding-bottom:26px;color:var(--muted);max-width:36em}
+
+/* waitlist */
+.join{position:relative;overflow:hidden;text-align:center;border-radius:clamp(28px,4vw,44px);border:1px solid rgba(219,164,107,.26);padding:clamp(48px,8vw,112px) clamp(20px,4vw,48px);background:radial-gradient(62% 52% at 50% 0%,rgba(150,92,52,.6),rgba(150,92,52,0) 72%),repeating-linear-gradient(90deg,rgba(255,255,255,.022) 0 1px,transparent 1px 6px),#17110e}
+.join .eyebrow{margin-bottom:26px}
+.join h2{font-size:clamp(44px,6.4vw,92px);line-height:.98;max-width:12em;margin-inline:auto}
+.join .body{margin:26px auto 0;max-width:30em;text-align:center}
+.signup{display:flex;align-items:center;gap:8px;max-width:520px;margin:38px auto 0;padding:8px;border-radius:999px;border:1px solid var(--line-2);background:rgba(10,7,5,.5);transition:border-color .25s}
+.signup:focus-within{border-color:var(--copper)}
+.signup input{flex:1;min-width:0;height:52px;padding:0 20px;background:transparent;border:0;color:var(--fg);font:400 17px/1 var(--font-body);outline:none}
+.signup input::placeholder{color:#7f7164}
+.msg{min-height:1.5em;margin:14px auto 0;font-size:14px;color:var(--muted);max-width:34em}
+.msg.err{color:#ffb08a}
+.proof{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px;color:var(--muted);font-size:14px}
+.avatars{display:flex}
+.avatars i{width:26px;height:26px;border-radius:50%;border:2px solid #17110e;margin-left:-8px}
+.avatars i:first-child{margin-left:0}
+.checks{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;margin:30px 0 0;padding:0;list-style:none;font-size:15px;font-weight:600}
+.checks li{display:flex;align-items:center;gap:9px}
+.checks svg{color:var(--copper)}
+
+footer.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px 32px;padding-block:44px 56px;color:var(--muted);font-size:14px}
+footer.foot .brand{font-size:17px;color:var(--fg)}
+footer.foot .logo{width:28px;height:28px;border-radius:8px}
+
+/* motion */
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0ms)}
+.js .reveal{opacity:.16;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0ms),border-color .3s,background .3s}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.in:hover{transition-delay:0ms}
+.js .card.reveal.in:hover{transform:translateY(-4px)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes ping{70%{box-shadow:0 0 0 9px rgba(255,122,47,0)}100%{box-shadow:0 0 0 0 rgba(255,122,47,0)}}
+@keyframes steam{0%{opacity:0;transform:translateY(10px)}35%{opacity:.7}100%{opacity:0;transform:translateY(-26px)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.marquee-track,.steam,.pill .dot{animation:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .statement .w{color:var(--fg);transition:none}
+}
+
+/* responsive */
+@media (max-width:1100px){
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{min-height:280px}
+}
+@media (max-width:900px){
+  .menu{display:none}
+  .nav{height:68px}
+  .hero,.specs-grid,.faq-grid,.head{grid-template-columns:minmax(0,1fr)}
+  .head .body{justify-self:start}
+  .viewer{min-height:460px}
+}
+@media (max-width:560px){
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .card{min-height:0}
+  .hide-sm{display:none}
+  .stats{gap:20px}
+  .spec-row{flex-direction:column;gap:6px}
+  .spec-row dd{text-align:left}
+  .signup{flex-direction:column;border-radius:28px;padding:10px}
+  .signup input{width:100%;text-align:center}
+  .signup .btn{width:100%}
+  .controls{padding:12px 16px;gap:12px 20px}
+  .photo{border-radius:24px}
+  .brand span:last-child{font-size:18px}
+}
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Couch Crush, back to top">
+      <span class="logo" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a1608" stroke-width="2.4" stroke-linecap="round"><path d="M4 8h16"/><path d="M7 8v10M17 8v10"/></svg>
+      </span>
+      <span>Couch Crush</span>
+    </a>
+    <nav class="menu" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#view">3D View</a>
+      <a href="#specs">Specs</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero" id="view" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="pill rise"><span class="dot" aria-hidden="true"></span>First batch ships this winter</p>
+      <h1 id="hero-title" class="rise" style="--d:80ms">The couch tray you'll <em>fall for.</em></h1>
+      <p class="lede rise" style="--d:160ms">Solid walnut, a gently heated pad, two cup holders, a snack tray and legs that rise to meet you. Couch Crush turns your sofa into the best seat in the house.</p>
+      <div class="cta-row rise" style="--d:240ms">
+        <a class="btn btn-primary" href="#join">Join the waitlist
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#features">See what's inside</a>
+      </div>
+      <div class="stats rise" style="--d:320ms">
+        <div><span class="num">104°F</span><span class="lab">Cozy warmth</span></div>
+        <div><span class="num">9–14″</span><span class="lab">Adjustable height</span></div>
+        <div><span class="num">100%</span><span class="lab">Solid walnut</span></div>
+      </div>
+    </div>
+
+    <div class="viewer rise" style="--d:200ms">
+      <div class="stage" id="stage">
+        <canvas id="gl" tabindex="0" role="img" aria-label="Interactive 3D model of the Couch Crush tray. Drag to rotate, scroll or pinch to zoom, arrow keys to orbit."></canvas>
+      </div>
+      <div class="hint">Drag to rotate<span class="hide-sm"> · Scroll or pinch to zoom</span></div>
+      <div class="zoom">
+        <button class="ico" id="zin" type="button" aria-label="Zoom in"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        <button class="ico" id="zout" type="button" aria-label="Zoom out"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+        <button class="ico" id="zreset" type="button" aria-label="Reset view"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg></button>
+      </div>
+      <div class="controls">
+        <label class="switch"><input type="checkbox" id="heat" checked><span class="track"></span><span>Heat pad</span></label>
+        <label class="switch"><input type="checkbox" id="items"><span class="track"></span><span>Items</span></label>
+        <label class="range" for="legs"><span>Leg height</span>
+          <input type="range" id="legs" min="9" max="14" step="0.1" value="12.4" aria-valuetext="12.4 inches">
+          <output class="mono" id="legval" for="legs">12.4″</output>
+        </label>
+      </div>
+      <p class="fallback" id="fallback" hidden>The 3D preview needs WebGL, which isn't available in this browser. Solid walnut top, heated glass pad, two cup holders, and steel legs that adjust from 9″ to 14″.</p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-label="Highlights">
+    <div class="marquee-track">
+      <ul>
+        <li>Solid American walnut</li><li>Built-in heating pad</li><li>Two cup holders</li><li>Hand-oiled finish</li>
+        <li>Solid American walnut</li><li>Built-in heating pad</li><li>Two cup holders</li><li>Hand-oiled finish</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>Solid American walnut</li><li>Built-in heating pad</li><li>Two cup holders</li><li>Hand-oiled finish</li>
+        <li>Solid American walnut</li><li>Built-in heating pad</li><li>Two cup holders</li><li>Hand-oiled finish</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="wrap section" id="features" aria-labelledby="features-title">
+    <div class="head">
+      <div class="reveal">
+        <p class="eyebrow">Why you'll crush on it</p>
+        <h2 id="features-title">Four details that make the <em>couch</em> complete.</h2>
+      </div>
+      <p class="body reveal" style="--d:120ms">We obsessed over the little things so your evenings feel effortless — from the first sip to the last episode.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-top">
+          <span class="badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="18" height="7" rx="2"/><path d="M8 9c0-1.5 1.5-1.5 1.5-3M12 9c0-1.5 1.5-1.5 1.5-3M16 9c0-1.5 1.5-1.5 1.5-3"/></svg></span>
+          <span class="idx">01</span>
+        </div>
+        <h3>Heated pad</h3>
+        <p>A round glass-top warming pad with a soft amber glow ring keeps your bowl at a cozy 104°F. One-touch controls and auto shut-off after 2 hours.</p>
+      </article>
+      <article class="card reveal" style="--d:90ms">
+        <div class="card-top">
+          <span class="badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1.4 11a2 2 0 0 1-2 1.8H9.4a2 2 0 0 1-2-1.8L6 8z"/><path d="M5 8h14M13 3l-1 5"/></svg></span>
+          <span class="idx">02</span>
+        </div>
+        <h3>Cup holders &amp; storage</h3>
+        <p>Deep recessed holders for your mug and a tall glass, plus a snack tray, a phone &amp; remote slot, a book groove and a steel valet tray.</p>
+      </article>
+      <article class="card reveal" style="--d:180ms">
+        <div class="card-top">
+          <span class="badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20V4M4.5 7.5 8 4l3.5 3.5"/><path d="M16 4v16M12.5 16.5 16 20l3.5-3.5"/></svg></span>
+          <span class="idx">03</span>
+        </div>
+        <h3>Expandable legs</h3>
+        <p>Black steel legs with chrome telescoping inners lock at five heights from 9″ to 14″ — low for the couch, tall for the ottoman or bed. Slide, click, done.</p>
+      </article>
+      <article class="card reveal" style="--d:270ms">
+        <div class="card-top">
+          <span class="badge" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="3"/></svg></span>
+          <span class="idx">04</span>
+        </div>
+        <h3>Solid wood</h3>
+        <p>Cut from FSC-certified American walnut, hand-oiled and finished to be water-resistant, with a brass nameplate on the front. Gets better with every year.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="photo reveal" id="photo">
+      <!-- Illustration placeholder: replace this <svg> with an <img> of your own lifestyle photo -->
+      <svg viewBox="0 0 1600 760" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a walnut couch tray across a sofa: a bowl on the heated pad, a mug of cocoa, a glass, a snack tray, a remote and a book, lit by a warm lamp.">
+        <defs>
+          <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2e2119"/><stop offset="1" stop-color="#1a120d"/></linearGradient>
+          <radialGradient id="g-lamp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd9a3" stop-opacity=".8"/><stop offset=".38" stop-color="#ffb86a" stop-opacity=".26"/><stop offset="1" stop-color="#ffb86a" stop-opacity="0"/></radialGradient>
+          <linearGradient id="g-couch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8d7561"/><stop offset="1" stop-color="#5f4c3d"/></linearGradient>
+          <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a4126"/><stop offset="1" stop-color="#5c2f19"/></linearGradient>
+          <linearGradient id="g-steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9bcc0"/><stop offset="1" stop-color="#7e8186"/></linearGradient>
+          <filter id="f-blur" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="14"/></filter>
+          <filter id="f-glow" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+        </defs>
+        <rect width="1600" height="760" fill="url(#g-wall)"/>
+        <circle cx="220" cy="270" r="360" fill="url(#g-lamp)"/>
+        <ellipse cx="220" cy="310" rx="60" ry="68" fill="#ffe3b5"/>
+        <rect x="203" y="372" width="34" height="66" rx="6" fill="#7a5a3e"/>
+        <ellipse cx="220" cy="452" rx="120" ry="20" fill="#4a3426"/>
+        <rect x="205" y="452" width="30" height="170" fill="#3a281d"/>
+        <path d="M430 215Q430 150 500 150H1520Q1590 150 1590 215V720H430Z" fill="url(#g-couch)"/>
+        <path d="M1010 160V540M470 560H1590" stroke="#52402f" stroke-width="3" fill="none" opacity=".7"/>
+        <path d="M430 690H1590V760H430Z" fill="#6e5a49"/>
+        <path d="M300 540Q400 440 560 485L650 760H250Z" fill="#8c4f2c"/>
+        <path d="M340 600Q430 560 520 590M330 660Q440 620 560 660" stroke="#6b3a20" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <ellipse cx="950" cy="705" rx="520" ry="30" fill="#000" opacity=".4" filter="url(#f-blur)"/>
+        <rect x="552" y="682" width="22" height="60" rx="4" fill="#15110f"/><rect x="556" y="730" width="14" height="30" rx="3" fill="url(#g-steel)"/>
+        <rect x="1316" y="682" width="22" height="60" rx="4" fill="#15110f"/><rect x="1320" y="730" width="14" height="30" rx="3" fill="url(#g-steel)"/>
+        <path d="M606 438H1294Q1312 438 1318 456L1396 640H494L582 456Q588 438 606 438Z" fill="url(#g-wood)"/>
+        <path d="M494 640H1396L1392 676Q1392 686 1382 686H508Q498 686 498 676Z" fill="#46230f"/>
+        <g stroke="#2a1006" stroke-opacity=".28" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M560 470Q900 456 1330 476M530 520Q930 504 1360 526M510 575Q950 560 1380 584M500 615Q940 606 1388 620"/>
+        </g>
+        <rect x="882" y="652" width="116" height="20" rx="3" fill="#c9a864"/>
+        <text x="940" y="667" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="13" font-weight="600" fill="#6b4a1e">CouchCrush</text>
+        <ellipse cx="940" cy="550" rx="156" ry="54" fill="#0f0b09"/>
+        <ellipse cx="940" cy="550" rx="140" ry="46" fill="none" stroke="#ff9a3c" stroke-width="10" opacity=".65" filter="url(#f-glow)"/>
+        <ellipse cx="940" cy="550" rx="140" ry="46" fill="none" stroke="#f3aa48" stroke-width="4"/>
+        <path d="M838 520Q840 592 940 596Q1040 592 1042 520Z" fill="#dccbb4"/>
+        <ellipse cx="940" cy="520" rx="104" ry="24" fill="#f1e6d3"/>
+        <ellipse cx="940" cy="522" rx="90" ry="17" fill="#b97836"/>
+        <ellipse cx="912" cy="520" rx="14" ry="5" fill="#d9a24f"/><ellipse cx="962" cy="524" rx="16" ry="5" fill="#d9a24f"/><ellipse cx="940" cy="516" rx="9" ry="4" fill="#5e8a45"/>
+        <path class="steam" d="M918 480Q902 458 918 436Q934 414 918 394"/>
+        <path class="steam s2" d="M950 482Q934 460 950 438Q966 416 950 396"/>
+        <path class="steam s3" d="M982 480Q966 458 982 436Q998 414 982 394"/>
+        <path d="M604 530V582Q604 598 622 598H664Q682 598 682 582V530Z" fill="#e6d7c1"/>
+        <ellipse cx="643" cy="530" rx="39" ry="11" fill="#5a3420"/>
+        <circle cx="628" cy="527" r="9" fill="#fff3e2"/><circle cx="648" cy="525" r="9" fill="#fff3e2"/><circle cx="662" cy="530" r="8" fill="#fff3e2"/>
+        <path d="M682 543q26 4 22 24q-4 18-22 14" stroke="#e6d7c1" stroke-width="9" fill="none" stroke-linecap="round"/>
+        <path class="steam" d="M636 506Q622 488 636 470"/>
+        <path d="M598 398H646L642 486Q642 492 636 492H608Q602 492 602 486Z" fill="rgba(200,225,245,.26)" stroke="rgba(225,242,255,.55)" stroke-width="2"/>
+        <rect x="610" y="420" width="16" height="16" rx="3" fill="rgba(255,255,255,.45)" transform="rotate(12 618 428)"/><rect x="622" y="438" width="15" height="15" rx="3" fill="rgba(255,255,255,.4)" transform="rotate(-10 630 446)"/>
+        <path d="M730 528H796L804 592H722Z" fill="#c29553"/>
+        <path d="M735 532H791L797 588H728Z" fill="#19120e"/>
+        <g fill="#9a6a3a"><ellipse cx="750" cy="560" rx="9" ry="6"/><ellipse cx="770" cy="552" rx="9" ry="6"/><ellipse cx="778" cy="572" rx="9" ry="6"/><ellipse cx="755" cy="576" rx="9" ry="6"/><ellipse cx="766" cy="564" rx="8" ry="5" fill="#6d4526"/></g>
+        <rect x="1092" y="452" width="30" height="104" rx="8" fill="#171210" transform="rotate(-6 1107 504)"/>
+        <rect x="1100" y="462" width="14" height="14" rx="7" fill="#c8c8c8" transform="rotate(-6 1107 504)"/>
+        <rect x="1132" y="448" width="26" height="102" rx="8" fill="#b8bcc1" transform="rotate(-4 1145 500)"/>
+        <rect x="1180" y="338" width="132" height="166" rx="6" fill="#cdbba0"/>
+        <rect x="1180" y="338" width="16" height="166" fill="#a8916f"/>
+        <rect x="1180" y="338" width="132" height="14" fill="#8a7455"/>
+        <rect x="1214" y="388" width="70" height="5" rx="2" fill="#8a7455"/><rect x="1214" y="404" width="46" height="5" rx="2" fill="#a8916f"/>
+        <rect x="1150" y="566" width="164" height="54" rx="10" fill="url(#g-steel)"/>
+        <rect x="1158" y="572" width="148" height="42" rx="7" fill="#6d7075"/>
+        <circle cx="1190" cy="593" r="12" fill="none" stroke="#2b2118" stroke-width="3"/><circle cx="1220" cy="593" r="12" fill="none" stroke="#2b2118" stroke-width="3"/><path d="M1202 593h6" stroke="#2b2118" stroke-width="3"/>
+        <rect x="1246" y="580" width="34" height="26" rx="8" fill="#f1efe9"/><rect x="1288" y="582" width="8" height="24" rx="3" fill="#c9a864"/>
+      </svg>
+      <span class="tag">Made for slow evenings</span>
+    </div>
+  </div>
+
+  <section class="wrap section" aria-label="Summary">
+    <p class="statement" id="statement">Dinner, a book and the remote, all within reach. Couch Crush sits over your lap without touching it, so warm food stays warm, drinks stay upright and everything else has its own place.</p>
+  </section>
+
+  <section class="wrap" style="padding-bottom:clamp(64px,9vw,128px)" id="specs" aria-labelledby="specs-title">
+    <div class="specs-grid">
+      <div class="specs-copy reveal">
+        <p class="eyebrow">The details</p>
+        <h2 id="specs-title">Crafted like furniture. <em>Built</em> for lazy Sundays.</h2>
+        <p class="body">Every Couch Crush tray is shaped, sanded and oiled by hand in our small workshop in Forest, Virginia. The heating element is sealed beneath a wipe-clean glass top — so spills are no drama.</p>
+        <ul class="chips">
+          <li>USB-C powered</li><li>Auto shut-off</li><li>Hand-oiled finish</li>
+        </ul>
+      </div>
+      <dl class="spec-table">
+        <div class="spec-row reveal"><dt>Material</dt><dd>Solid American walnut</dd></div>
+        <div class="spec-row reveal" style="--d:60ms"><dt>Tray size</dt><dd>24″ × 13″</dd></div>
+        <div class="spec-row reveal" style="--d:120ms"><dt>Height</dt><dd>9″ – 14″ (5 lock positions)</dd></div>
+        <div class="spec-row reveal" style="--d:180ms"><dt>Heating pad</dt><dd>8″ round glass top · up to 104°F</dd></div>
+        <div class="spec-row reveal" style="--d:240ms"><dt>Cup holders</dt><dd>2 recessed (mug + tall glass)</dd></div>
+        <div class="spec-row reveal" style="--d:300ms"><dt>Storage</dt><dd>Snack tray · remote slot · book groove · steel valet tray</dd></div>
+        <div class="spec-row reveal" style="--d:360ms"><dt>Power</dt><dd>USB-C · auto shut-off after 2 hours</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:clamp(64px,9vw,128px)" id="faq" aria-labelledby="faq-title">
+    <div class="faq-grid">
+      <div class="reveal">
+        <p class="eyebrow">Good questions</p>
+        <h2 id="faq-title">Before you get <em>comfortable.</em></h2>
+      </div>
+      <div class="faq-list reveal" style="--d:100ms">
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a1" id="q1">When will the first batch ship?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a1" role="region" aria-labelledby="q1"><div><p>The first batch of 500 units ships this winter. Waitlist members hear first and get a ship date by email before the public launch.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a2" id="q2">How does the heating pad get power?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a2" role="region" aria-labelledby="q2"><div><p>Through a USB-C port on the tray. Plug it into any standard USB-C wall adapter. There are no batteries to charge.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a3" id="q3">Is the heated pad safe to leave on?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a3" role="region" aria-labelledby="q3"><div><p>The pad tops out at 104°F, about the warmth of a hot bath, and shuts itself off after 2 hours. The element is sealed beneath the glass top.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a4" id="q4">Will it fit my couch?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a4" role="region" aria-labelledby="q4"><div><p>The tray is 24″ × 13″ and the legs lock at five heights between 9″ and 14″, so it works over most laps, sofas and ottomans. If you're unsure, measure from your cushion to where you want the tray to sit.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a5" id="q5">How do I clean it?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a5" role="region" aria-labelledby="q5"><div><p>Wipe the glass pad and cup holders with a damp cloth. Once or twice a year, rub in a food-safe oil to keep the walnut finish water-resistant.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="q" type="button" aria-expanded="false" aria-controls="a6" id="q6">What does the waitlist get me?<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <div class="a" id="a6" role="region" aria-labelledby="q6"><div><p>Early access before launch, a 20% founding-member discount, free shipping and behind-the-scenes updates from the workshop. You can leave the list at any time.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-bottom:clamp(48px,6vw,88px)" id="join" aria-labelledby="join-title">
+    <div class="join reveal">
+      <p class="eyebrow">Limited first batch · 500 units</p>
+      <h2 id="join-title">Get first dibs on the <em>coziest</em> seat.</h2>
+      <p class="body">Join the waitlist for early access, a founding-member price, and behind-the-scenes updates from the workshop.</p>
+      <form class="signup" id="wl" novalidate>
+        <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" inputmode="email" required>
+        <button class="btn btn-primary" type="submit">Join the waitlist
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </form>
+      <p class="msg" id="wl-msg" role="status" aria-live="polite"></p>
+      <div class="proof">
+        <span class="avatars" aria-hidden="true"><i style="background:#c08a5e"></i><i style="background:#8f5a3c"></i><i style="background:#dcb58f"></i><i style="background:#ff7a2f"></i></span>
+        <span>2,148 people are already in line</span>
+      </div>
+      <ul class="checks">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>20% founding discount</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Free shipping</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No spam, ever</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <a class="brand" href="#top" aria-label="Couch Crush, back to top">
+    <span class="logo" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2a1608" stroke-width="2.6" stroke-linecap="round"><path d="M4 8h16"/><path d="M7 8v10M17 8v10"/></svg></span>
+    <span>Couch Crush</span>
+  </a>
+  <p>Handmade in Forest, Virginia.</p>
+  <p>© 2026 Couch Crush</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+'use strict';
+var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+
+/* ---------- scroll effects: progress bar, word-by-word statement, panel parallax ---------- */
+var bar=document.getElementById('progress');
+var st=document.getElementById('statement');
+var words=[];
+if(st){
+  var parts=st.textContent.trim().split(/\s+/);
+  st.textContent='';
+  parts.forEach(function(w){
+    var s=document.createElement('span');
+    s.className='w'+(reduce?' lit':'');
+    s.textContent=w;
+    st.appendChild(s);
+    st.appendChild(document.createTextNode(' '));
+    words.push(s);
+  });
+}
+var photo=document.getElementById('photo');
+var scene=photo?photo.querySelector('svg'):null;
+var ticking=false;
+function update(){
+  ticking=false;
+  var vh=window.innerHeight||800;
+  var max=document.documentElement.scrollHeight-vh;
+  var p=max>0?clamp(window.scrollY/max,0,1):0;
+  if(bar)bar.style.transform='scaleX('+p.toFixed(4)+')';
+  if(words.length&&!reduce){
+    var r=st.getBoundingClientRect();
+    var t=clamp((vh*0.88-r.top)/(vh*0.5),0,1);
+    var n=Math.round(t*words.length);
+    for(var i=0;i<words.length;i++){words[i].classList.toggle('lit',i<n);}
+  }
+  if(scene&&!reduce){
+    var b=photo.getBoundingClientRect();
+    if(b.bottom>0&&b.top<vh){
+      var q=clamp(((b.top+b.height/2)-vh/2)/vh,-1,1);
+      scene.style.transform='translate3d(0,'+(q*-34).toFixed(1)+'px,0) scale(1.1)';
+    }
+  }
+}
+function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update);}}
+window.addEventListener('scroll',onScroll,{passive:true});
+window.addEventListener('resize',onScroll);
+update();
+
+/* ---------- reveal on scroll ---------- */
+var reveals=[].slice.call(document.querySelectorAll('.reveal'));
+if(reduce||!('IntersectionObserver' in window)){
+  reveals.forEach(function(el){el.classList.add('in');});
+}else{
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+  reveals.forEach(function(el){io.observe(el);});
+}
+
+/* ---------- FAQ accordion ---------- */
+[].forEach.call(document.querySelectorAll('.faq-item .q'),function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.closest('.faq-item');
+    var open=!item.classList.contains('open');
+    item.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+});
+
+/* ---------- waitlist form ---------- */
+var form=document.getElementById('wl');
+var msg=document.getElementById('wl-msg');
+if(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=(document.getElementById('email').value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
+      msg.className='msg err';
+      msg.textContent='Enter a valid email address, like you@email.com.';
+      return;
+    }
+    msg.className='msg';
+    msg.textContent='Thanks. This preview page is not connected to a mailing list yet, so your email was not saved.';
+  });
+}
+[].forEach.call(document.querySelectorAll('a[href="#join"]'),function(a){
+  a.addEventListener('click',function(){
+    setTimeout(function(){var i=document.getElementById('email');if(i){try{i.focus({preventScroll:true});}catch(err){}}},reduce?0:700);
+  });
+});
+
+/* ---------- 3D tray viewer ---------- */
+function initViewer(){
+  var T=window.THREE;
+  var cv=document.getElementById('gl');
+  var host=document.getElementById('stage');
+  var fb=document.getElementById('fallback');
+  function fail(){if(fb)fb.hidden=false;if(cv)cv.hidden=true;}
+  if(!T||!cv){fail();return;}
+  var renderer;
+  try{renderer=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true});}catch(err){fail();return;}
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+  renderer.setClearColor(0x000000,0);
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=T.PCFSoftShadowMap;
+
+  var scene3=new T.Scene();
+  var camera=new T.PerspectiveCamera(32,1,1,500);
+  var target=new T.Vector3(0,6.5,0);
+
+  /* lights */
+  scene3.add(new T.AmbientLight(0xffe6cc,0.55));
+  scene3.add(new T.HemisphereLight(0xffd7ad,0x2a1a10,0.5));
+  var key=new T.DirectionalLight(0xfff0dc,0.95);
+  key.position.set(-18,48,26);
+  key.castShadow=true;
+  key.shadow.mapSize.set(1024,1024);
+  key.shadow.camera.left=-28;key.shadow.camera.right=28;key.shadow.camera.top=28;key.shadow.camera.bottom=-28;
+  key.shadow.camera.near=5;key.shadow.camera.far=130;
+  key.shadow.bias=-0.0005;
+  scene3.add(key);
+  var rim=new T.DirectionalLight(0xff8a45,0.45);
+  rim.position.set(24,12,-20);
+  scene3.add(rim);
+  var heatLight=new T.PointLight(0xff8a2a,0.9,22,2);
+  scene3.add(heatLight);
+
+  /* ground shadow catcher */
+  var ground=new T.Mesh(new T.PlaneGeometry(180,180),new T.ShadowMaterial({opacity:0.4}));
+  ground.rotation.x=-Math.PI/2;
+  ground.receiveShadow=true;
+  scene3.add(ground);
+
+  /* procedural walnut grain */
+  function woodTexture(){
+    var c=document.createElement('canvas');c.width=1024;c.height=560;
+    var g=c.getContext('2d');
+    var grd=g.createLinearGradient(0,0,0,c.height);
+    grd.addColorStop(0,'#7a4226');grd.addColorStop(0.5,'#6b3820');grd.addColorStop(1,'#7e4628');
+    g.fillStyle=grd;g.fillRect(0,0,c.width,c.height);
+    var seed=7;
+    function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+    for(var i=0;i<280;i++){
+      var y=rnd()*c.height,amp=2+rnd()*10,a=0.04+rnd()*0.14,w=0.6+rnd()*2.6;
+      var ph=rnd()*6.28,fr=0.004+rnd()*0.008;
+      g.strokeStyle=rnd()>0.45?'rgba(28,12,5,'+a.toFixed(3)+')':'rgba(176,108,62,'+(a*0.8).toFixed(3)+')';
+      g.lineWidth=w;g.beginPath();g.moveTo(0,y);
+      for(var x=0;x<=c.width;x+=32){g.lineTo(x,y+Math.sin(x*fr+ph)*amp);}
+      g.stroke();
+    }
+    var t=new T.CanvasTexture(c);
+    t.anisotropy=4;t.wrapS=t.wrapT=T.RepeatWrapping;
+    t.repeat.set(1/24,1/13);t.offset.set(0.5,0.5);
+    return t;
+  }
+
+  /* materials */
+  var M={
+    wood:new T.MeshStandardMaterial({map:woodTexture(),roughness:0.62,metalness:0.02}),
+    woodSide:new T.MeshStandardMaterial({color:0x5b2f19,roughness:0.7}),
+    dark:new T.MeshStandardMaterial({color:0x17100c,roughness:0.5,metalness:0.1}),
+    glass:new T.MeshStandardMaterial({color:0x0b0908,roughness:0.12,metalness:0.55}),
+    brass:new T.MeshStandardMaterial({color:0xc9a15a,roughness:0.35,metalness:0.75}),
+    steel:new T.MeshStandardMaterial({color:0x14110f,roughness:0.45,metalness:0.6}),
+    chrome:new T.MeshStandardMaterial({color:0xd7d9dc,roughness:0.18,metalness:0.95}),
+    ring:new T.MeshStandardMaterial({color:0xffa24a,emissive:0xff7a1a,emissiveIntensity:1.4,roughness:0.4}),
+    cream:new T.MeshStandardMaterial({color:0xe7d8c2,roughness:0.55,side:T.DoubleSide})
+  };
+  function add(parent,geo,mat,x,y,z,shadow){
+    var m=new T.Mesh(geo,mat);m.position.set(x,y,z);
+    if(shadow!==false){m.castShadow=true;m.receiveShadow=true;}
+    parent.add(m);return m;
+  }
+
+  /* tray top: rounded slab */
+  var tray=new T.Group();
+  scene3.add(tray);
+  var W=24,D=13,R=1.3,hw=W/2,hd=D/2;
+  var sh=new T.Shape();
+  sh.moveTo(-hw+R,-hd);sh.lineTo(hw-R,-hd);sh.quadraticCurveTo(hw,-hd,hw,-hd+R);
+  sh.lineTo(hw,hd-R);sh.quadraticCurveTo(hw,hd,hw-R,hd);
+  sh.lineTo(-hw+R,hd);sh.quadraticCurveTo(-hw,hd,-hw,hd-R);
+  sh.lineTo(-hw,-hd+R);sh.quadraticCurveTo(-hw,-hd,-hw+R,-hd);
+  var slabGeo=new T.ExtrudeGeometry(sh,{depth:0.9,bevelEnabled:true,bevelThickness:0.1,bevelSize:0.1,bevelSegments:3,curveSegments:14});
+  slabGeo.rotateX(-Math.PI/2);
+  var slab=new T.Mesh(slabGeo,[M.wood,M.woodSide]);
+  slab.castShadow=true;slab.receiveShadow=true;
+  tray.add(slab);
+  var SURF=1.0;
+
+  /* nameplate on the front edge */
+  add(tray,new T.BoxGeometry(3.2,0.5,0.08),M.brass,0,0.45,hd+0.14,false);
+
+  /* heat pad */
+  var padX=-1.2;
+  add(tray,new T.CylinderGeometry(4.2,4.2,0.14,64),M.glass,padX,SURF+0.05,0);
+  var ring=add(tray,new T.TorusGeometry(3.7,0.09,12,96),M.ring,padX,SURF+0.14,0,false);
+  ring.rotation.x=Math.PI/2;
+  var gc=document.createElement('canvas');gc.width=gc.height=256;
+  var gg=gc.getContext('2d');var rg=gg.createRadialGradient(128,128,10,128,128,128);
+  rg.addColorStop(0,'rgba(255,150,50,.6)');rg.addColorStop(0.6,'rgba(255,120,30,.2)');rg.addColorStop(1,'rgba(255,120,30,0)');
+  gg.fillStyle=rg;gg.fillRect(0,0,256,256);
+  var glowMat=new T.MeshBasicMaterial({map:new T.CanvasTexture(gc),transparent:true,blending:T.AdditiveBlending,depthWrite:false,opacity:0.6});
+  var glow=add(tray,new T.PlaneGeometry(13,13),glowMat,padX,SURF+0.02,0,false);
+  glow.rotation.x=-Math.PI/2;
+  var tick1=add(tray,new T.CylinderGeometry(0.22,0.22,0.03,20),M.brass,padX,SURF+0.14,3.1,false);
+  tick1.visible=false;
+  heatLight.position.set(padX,SURF+5,0);
+
+  /* snack tray, phone slot, book groove */
+  add(tray,new T.BoxGeometry(2.9,0.05,7.9),M.brass,5.0,SURF+0.015,0,false);
+  add(tray,new T.BoxGeometry(2.6,0.07,7.6),M.dark,5.0,SURF+0.03,0,false);
+  add(tray,new T.BoxGeometry(5.8,0.05,3.0),M.brass,-8.3,SURF+0.015,-3.6,false);
+  add(tray,new T.BoxGeometry(5.5,0.07,2.7),M.dark,-8.3,SURF+0.03,-3.6,false);
+  add(tray,new T.BoxGeometry(6.9,0.07,1.3),M.dark,-8.3,SURF+0.03,3.9,false);
+
+  /* cup holders */
+  var cupA={x:9.6,z:-3.2,r:1.9},cupB={x:9.6,z:3.0,r:1.5};
+  [cupA,cupB].forEach(function(c){
+    add(tray,new T.CylinderGeometry(c.r+0.12,c.r+0.12,0.06,48),M.brass,c.x,SURF+0.02,c.z,false);
+    add(tray,new T.CylinderGeometry(c.r,c.r,0.08,48),M.dark,c.x,SURF+0.04,c.z,false);
+  });
+
+  /* items on the tray */
+  var items=new T.Group();items.visible=false;tray.add(items);
+  var bowl=new T.Mesh(new T.SphereGeometry(2.9,40,20,0,Math.PI*2,Math.PI/2,Math.PI/2),M.cream);
+  bowl.scale.y=0.62;bowl.position.set(padX,SURF+1.95,0);bowl.castShadow=true;items.add(bowl);
+  var rim2=add(items,new T.TorusGeometry(2.9,0.1,10,48),M.cream,padX,SURF+1.95,0);rim2.rotation.x=Math.PI/2;
+  var food=add(items,new T.CircleGeometry(2.7,40),new T.MeshStandardMaterial({color:0xc07a38,roughness:0.8}),padX,SURF+1.78,0,false);food.rotation.x=-Math.PI/2;
+  for(var i=0;i<6;i++){var a=i/6*6.283;add(items,new T.SphereGeometry(0.34,12,10),new T.MeshStandardMaterial({color:0xe8b860,roughness:0.6}),padX+Math.cos(a)*1.4,SURF+1.9,Math.sin(a)*1.4);}
+  add(items,new T.SphereGeometry(0.3,10,8),new T.MeshStandardMaterial({color:0x4f8a3a,roughness:0.7}),padX+0.2,SURF+2.05,0.2);
+  [-1,1].forEach(function(s){var h=add(items,new T.TorusGeometry(0.5,0.12,8,20),M.cream,padX+s*3.05,SURF+1.7,0);});
+
+  var mugMat=new T.MeshStandardMaterial({color:0xe3d4bf,roughness:0.5});
+  add(items,new T.CylinderGeometry(1.5,1.4,2.3,32,1,true),new T.MeshStandardMaterial({color:0xe3d4bf,roughness:0.5,side:T.DoubleSide}),cupA.x,SURF+1.2,cupA.z);
+  add(items,new T.CylinderGeometry(1.4,1.4,0.1,32),mugMat,cupA.x,SURF+0.1,cupA.z);
+  add(items,new T.CylinderGeometry(1.38,1.38,0.05,32),new T.MeshStandardMaterial({color:0x4a2a1a,roughness:0.9}),cupA.x,SURF+2.15,cupA.z,false);
+  for(var j=0;j<4;j++){var b=j/4*6.283+0.5;add(items,new T.SphereGeometry(0.34,10,8),new T.MeshStandardMaterial({color:0xfff6ea,roughness:0.9}),cupA.x+Math.cos(b)*0.7,SURF+2.3,cupA.z+Math.sin(b)*0.7,false);}
+  var handle=add(items,new T.TorusGeometry(0.65,0.15,10,24,Math.PI),mugMat,cupA.x-1.55,SURF+1.25,cupA.z);handle.rotation.z=Math.PI/2;
+
+  var glassMat=new T.MeshStandardMaterial({color:0xcfe8ff,transparent:true,opacity:0.26,roughness:0.05,metalness:0,depthWrite:false});
+  add(items,new T.CylinderGeometry(1.25,1.1,3.7,32,1,true),glassMat,cupB.x,SURF+1.9,cupB.z,false);
+  add(items,new T.CylinderGeometry(1.05,1.0,2.6,28),new T.MeshStandardMaterial({color:0xe9f4ff,transparent:true,opacity:0.3,roughness:0.1,depthWrite:false}),cupB.x,SURF+1.5,cupB.z,false);
+  [[-0.3,2.5,0.2,0.3],[0.4,2.9,-0.3,-0.4],[0.1,2.2,0.5,0.1]].forEach(function(c){
+    var ice=add(items,new T.BoxGeometry(0.7,0.7,0.7),new T.MeshStandardMaterial({color:0xffffff,transparent:true,opacity:0.6,roughness:0.1,depthWrite:false}),cupB.x+c[0],SURF+c[1],cupB.z+c[2],false);
+    ice.rotation.set(c[3],c[3]*2,0.2);
+  });
+
+  var book=add(items,new T.BoxGeometry(5.4,4.4,0.9),new T.MeshStandardMaterial({color:0xc9b79c,roughness:0.8}),-8.3,SURF+2.2,3.9);
+  add(items,new T.BoxGeometry(5.42,0.5,0.92),new T.MeshStandardMaterial({color:0x6e4c34,roughness:0.8}),-8.3,SURF+4.0,3.9,false);
+  var phone=add(items,new T.BoxGeometry(4.2,0.18,2.2),new T.MeshStandardMaterial({color:0x0f0f10,roughness:0.3,metalness:0.4}),-8.3,SURF+0.14,-3.6);
+  var scr=add(items,new T.PlaneGeometry(3.9,1.9),new T.MeshStandardMaterial({color:0x1b2a3a,emissive:0x0b1824,roughness:0.2}),-8.3,SURF+0.24,-3.6,false);scr.rotation.x=-Math.PI/2;
+  var nutMat=new T.MeshStandardMaterial({color:0x9a6a3a,roughness:0.8});
+  for(var k=0;k<14;k++){var nx=5.0+((k%3)-1)*0.7,nz=-3+Math.floor(k/3)*1.05;add(items,new T.SphereGeometry(0.26,10,8),nutMat,nx+(k%2)*0.12,SURF+0.3,nz,false);}
+
+  /* telescoping legs */
+  var legs=[];
+  [[-9.6,-4.7],[9.6,-4.7],[-9.6,4.7],[9.6,4.7]].forEach(function(p){
+    var sleeve=add(scene3,new T.CylinderGeometry(0.55,0.55,8.5,24),M.steel,p[0],0,p[1]);
+    var inner=add(scene3,new T.CylinderGeometry(0.38,0.38,1,20),M.chrome,p[0],0,p[1]);
+    var collar=add(scene3,new T.TorusGeometry(0.56,0.1,8,24),M.brass,p[0],0,p[1],false);collar.rotation.x=Math.PI/2;
+    add(scene3,new T.CylinderGeometry(0.5,0.55,0.3,20),M.dark,p[0],0.15,p[1]);
+    legs.push({sleeve:sleeve,inner:inner,collar:collar});
+  });
+  var H=9,Htarget=12.4;
+  function applyH(h){
+    tray.position.y=h;
+    var hi=h-5.5;
+    legs.forEach(function(l){
+      l.sleeve.position.y=h-4.25;
+      l.inner.scale.y=hi;l.inner.position.y=hi/2;
+      l.collar.position.y=h-8.5;
+    });
+  }
+  applyH(H);
+
+  /* orbit camera */
+  var DEF={az:0.62,phi:1.1,r:64};
+  var cam={az:DEF.az-0.9,phi:1.0,r:DEF.r*1.25};
+  var goal={az:DEF.az,phi:DEF.phi,r:DEF.r};
+  var auto=!reduce,idle=null;
+  function touch(){
+    auto=false;
+    if(idle)clearTimeout(idle);
+    if(!reduce)idle=setTimeout(function(){auto=true;},8000);
+  }
+  var dim={w:1,h:1};
+  function resize(){
+    var r=host.getBoundingClientRect();
+    dim.w=Math.max(1,Math.round(r.width));dim.h=Math.max(1,Math.round(r.height));
+    renderer.setSize(dim.w,dim.h,false);
+    camera.aspect=dim.w/dim.h;camera.updateProjectionMatrix();
+  }
+  if(window.ResizeObserver){new ResizeObserver(resize).observe(host);}
+  window.addEventListener('resize',resize);
+  resize();
+
+  var ptrs=new Map(),lastPinch=0;
+  function pinchDist(){
+    var a=[];ptrs.forEach(function(v){a.push(v);});
+    if(a.length<2)return 0;
+    return Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);
+  }
+  cv.addEventListener('pointerdown',function(e){
+    try{cv.setPointerCapture(e.pointerId);}catch(err){}
+    ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(ptrs.size===2)lastPinch=pinchDist();
+    cv.classList.add('grab');touch();
+  });
+  cv.addEventListener('pointermove',function(e){
+    var p=ptrs.get(e.pointerId);if(!p)return;
+    var dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+    if(ptrs.size===1){goal.az-=dx*0.008;goal.phi=clamp(goal.phi-dy*0.006,0.35,1.5);}
+    else if(ptrs.size===2){var d=pinchDist();if(lastPinch&&d)goal.r=clamp(goal.r*lastPinch/d,36,110);lastPinch=d;}
+    touch();
+  });
+  function endPtr(e){ptrs.delete(e.pointerId);lastPinch=0;if(!ptrs.size)cv.classList.remove('grab');}
+  cv.addEventListener('pointerup',endPtr);
+  cv.addEventListener('pointercancel',endPtr);
+  cv.addEventListener('wheel',function(e){
+    e.preventDefault();
+    goal.r=clamp(goal.r*Math.exp(e.deltaY*0.0012),36,110);touch();
+  },{passive:false});
+  cv.addEventListener('keydown',function(e){
+    var k=e.key,used=true;
+    if(k==='ArrowLeft')goal.az-=0.12;
+    else if(k==='ArrowRight')goal.az+=0.12;
+    else if(k==='ArrowUp')goal.phi=clamp(goal.phi-0.08,0.35,1.5);
+    else if(k==='ArrowDown')goal.phi=clamp(goal.phi+0.08,0.35,1.5);
+    else if(k==='+'||k==='=')goal.r=clamp(goal.r*0.88,36,110);
+    else if(k==='-')goal.r=clamp(goal.r*1.14,36,110);
+    else used=false;
+    if(used){e.preventDefault();touch();}
+  });
+  document.getElementById('zin').addEventListener('click',function(){goal.r=clamp(goal.r*0.84,36,110);touch();});
+  document.getElementById('zout').addEventListener('click',function(){goal.r=clamp(goal.r*1.19,36,110);touch();});
+  document.getElementById('zreset').addEventListener('click',function(){goal.az=DEF.az;goal.phi=DEF.phi;goal.r=DEF.r;auto=!reduce;if(idle)clearTimeout(idle);});
+
+  /* controls */
+  var heatOn=true;
+  var heatEl=document.getElementById('heat');
+  var itemsEl=document.getElementById('items');
+  var legEl=document.getElementById('legs');
+  var legVal=document.getElementById('legval');
+  heatEl.addEventListener('change',function(){heatOn=heatEl.checked;});
+  itemsEl.addEventListener('change',function(){items.visible=itemsEl.checked;});
+  function setFill(){
+    var pct=((parseFloat(legEl.value)-9)/5)*100;
+    legEl.style.setProperty('--fill',pct.toFixed(1)+'%');
+  }
+  function onLegs(){
+    var v=parseFloat(legEl.value);
+    Htarget=v;
+    legVal.textContent=v.toFixed(1)+'″';
+    legEl.setAttribute('aria-valuetext',v.toFixed(1)+' inches');
+    setFill();touch();
+  }
+  legEl.addEventListener('input',onLegs);
+  setFill();
+
+  /* render loop, paused when off-screen */
+  var visible=true;
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(host);
+  }
+  var last=performance.now();
+  function frame(now){
+    requestAnimationFrame(frame);
+    var dt=Math.min(0.05,(now-last)/1000);last=now;
+    if(!visible||document.hidden)return;
+    if(auto)goal.az+=dt*0.18;
+    var k=1-Math.pow(0.002,dt);
+    cam.az+=(goal.az-cam.az)*k;cam.phi+=(goal.phi-cam.phi)*k;cam.r+=(goal.r-cam.r)*k;
+    H+=(Htarget-H)*(1-Math.pow(0.004,dt));
+    applyH(H);
+    var t=now/1000;
+    if(heatOn){
+      ring.material.color.setHex(0xffa24a);ring.material.emissive.setHex(0xff7a1a);
+      ring.material.emissiveIntensity=1.3+0.35*Math.sin(t*2.2);
+      glowMat.opacity=0.55+0.1*Math.sin(t*2.2);
+      heatLight.intensity=0.9;
+    }else{
+      ring.material.color.setHex(0x4a3a2c);ring.material.emissive.setHex(0x000000);
+      ring.material.emissiveIntensity=0;glowMat.opacity=0;heatLight.intensity=0;
+    }
+    var asp=dim.w/dim.h,fit=asp<1.1?1.1/asp:1,rr=cam.r*fit;
+    camera.position.set(
+      target.x+rr*Math.sin(cam.phi)*Math.sin(cam.az),
+      target.y+rr*Math.cos(cam.phi),
+      target.z+rr*Math.sin(cam.phi)*Math.cos(cam.az)
+    );
+    camera.lookAt(target);
+    renderer.render(scene3,camera);
+  }
+  requestAnimationFrame(frame);
+}
+try{initViewer();}catch(err){
+  var f=document.getElementById('fallback');if(f)f.hidden=false;
+  var c=document.getElementById('gl');if(c)c.hidden=true;
+}
+})();
+</script>
+</body>
+</html>
